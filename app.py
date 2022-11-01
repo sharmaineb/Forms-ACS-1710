@@ -98,8 +98,8 @@ def calculator():
 @app.route('/calculator_results')
 def calculator_results():
     """Shows the user the result of their calculation."""
-    input_number_1 = int(request.args.get('operation1'))
-    input_number_2 = int(request.args.get('operation2'))
+    input_number_1 = int(request.args.get('operand1'))
+    input_number_2 = int(request.args.get('operand2'))
     operation = request.args.get('operation')
     if operation == "add":
         result = input_number_1 + input_number_2
@@ -111,8 +111,8 @@ def calculator_results():
         result = input_number_1 / input_number_2
 
     context = {
-        "input_number_1" : input_number_1,
-        "input_number_2" : input_number_2,
+        "operand1" : input_number_1,
+        "operand2" : input_number_2,
         "operation" : operation,
         "result" : result
     }
